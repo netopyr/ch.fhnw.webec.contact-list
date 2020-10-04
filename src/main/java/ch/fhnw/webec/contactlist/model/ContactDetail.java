@@ -3,40 +3,72 @@ package ch.fhnw.webec.contactlist.model;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-public final class ContactDetail {
+import java.util.List;
 
-    private final long id;
-    private final String firstName;
-    private final String lastName;
-    private final String email;
-    private final String phone;
+public class ContactDetail {
 
-    public ContactDetail(long id, String firstName, String lastName, String email, String phone) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.phone = phone;
-    }
+    private long id;
+    private String firstName;
+    private String lastName;
+    private List<String> email;
+    private List<String> phone;
+    private String jobTitle;
+    private String company;
 
     public long getId() {
         return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getFirstName() {
         return firstName;
     }
 
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
     public String getLastName() {
         return lastName;
     }
 
-    public String getEmail() {
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public List<String> getEmail() {
         return email;
     }
 
-    public String getPhone() {
+    public void setEmail(List<String> email) {
+        this.email = email;
+    }
+
+    public List<String> getPhone() {
         return phone;
+    }
+
+    public void setPhone(List<String> phone) {
+        this.phone = phone;
+    }
+
+    public String getJobTitle() {
+        return jobTitle;
+    }
+
+    public void setJobTitle(String jobTitle) {
+        this.jobTitle = jobTitle;
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
     }
 
     @Override
@@ -47,6 +79,8 @@ public final class ContactDetail {
                 .append("lastName", lastName)
                 .append("email", email)
                 .append("phone", phone)
+                .append("jobTitle", jobTitle)
+                .append("company", company)
                 .toString();
     }
 }

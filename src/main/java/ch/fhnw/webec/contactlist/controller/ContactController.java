@@ -23,10 +23,10 @@ public class ContactController {
     @GetMapping
     public ModelAndView getIndex(@RequestParam(required = false) Long select) {
         final Map<String, Object> model = new HashMap<>();
-        model.put("persons", service.getAllPersons());
+        model.put("contacts", service.getAllContacts());
         if (select != null) {
-            service.findPerson(select).ifPresent(
-                    person -> model.put("selected", person)
+            service.findContact(select).ifPresent(
+                    contact -> model.put("selected", contact)
             );
         }
         return new ModelAndView("index", model);
